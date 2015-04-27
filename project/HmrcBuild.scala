@@ -22,7 +22,7 @@ import uk.gov.hmrc.SbtAutoBuildPlugin
 object HmrcBuild extends Build {
 
   val appName = "git-stamp"
-  val appVersion = "0.1.0"
+  val appVersion = "0.2.0-SNAPSHOT"
 
   lazy val project = Project(appName, file("."))
     .enablePlugins(SbtAutoBuildPlugin)
