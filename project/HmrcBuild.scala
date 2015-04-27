@@ -16,7 +16,6 @@
 
 import sbt.Keys._
 import sbt._
-import sbtassembly.AssemblyKeys._
 import uk.gov.hmrc.DefaultBuildSettings._
 import uk.gov.hmrc.SbtAutoBuildPlugin
 
@@ -35,12 +34,7 @@ object HmrcBuild extends Build {
         "com.github.nscala-time" %% "nscala-time" % "1.8.0",
         "org.eclipse.jgit" % "org.eclipse.jgit" % "3.6.1.201501031845-r"
       ),
-      BuildDescriptionSettings(),
-      assemblyMergeStrategy in assembly := {
-        case x =>
-          val oldStrategy = (assemblyMergeStrategy in assembly).value
-          oldStrategy(x)
-      }
+      BuildDescriptionSettings()
     )
 }
 
