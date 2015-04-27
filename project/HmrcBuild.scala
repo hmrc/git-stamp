@@ -30,11 +30,15 @@ object HmrcBuild extends Build {
       version := appVersion,
       targetJvm := "jvm-1.7",
       scalaVersion := "2.10.4",
+      resolvers ++= Seq(Resolver.jcenterRepo),
       libraryDependencies ++= Seq(
         "com.github.nscala-time" %% "nscala-time" % "1.8.0",
         "org.eclipse.jgit" % "org.eclipse.jgit" % "3.6.1.201501031845-r",
-        "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+        "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+        "org.pegdown" % "pegdown" % "1.4.2" % "test"
       ),
+      sources in doc in Compile := List(),
+      sources in doc in Test := List(),
       BuildDescriptionSettings()
     )
 }
