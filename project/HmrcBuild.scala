@@ -22,14 +22,14 @@ import uk.gov.hmrc.SbtAutoBuildPlugin
 object HmrcBuild extends Build {
 
   val appName = "git-stamp"
-  val appVersion = "0.2.0-SNAPSHOT"
+  val appVersion = "0.2.0"
 
   lazy val project = Project(appName, file("."))
     .enablePlugins(SbtAutoBuildPlugin)
     .settings(
       version := appVersion,
       targetJvm := "jvm-1.7",
-      scalaVersion := "2.11.6",
+      scalaVersion := "2.10.4",
       libraryDependencies ++= Seq(
         "com.github.nscala-time" %% "nscala-time" % "1.8.0",
         "org.eclipse.jgit" % "org.eclipse.jgit" % "3.6.1.201501031845-r"
