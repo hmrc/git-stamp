@@ -8,11 +8,11 @@ import java.util.Map;
 public final class JGitStamp {
     private JGitStamp() {}
 
-    public Map<String, String> gitStamp() throws Exception {
+    public static Map<String, String> gitStamp() throws Exception {
         return GitStamp.gitStamp();
     }
 
-    private Map<String, String> gitStamp(Repository repository) {
+    private static Map<String, String> gitStamp(Repository repository) {
         return GitStamp.gitStamp(repository);
     }
 }
