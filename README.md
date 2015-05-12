@@ -1,11 +1,17 @@
 # git-stamp
 [![Build Status](https://travis-ci.org/hmrc/git-stamp.svg)](https://travis-ci.org/hmrc/git-stamp) [ ![Download](https://api.bintray.com/packages/hmrc/releases/git-stamp/images/download.svg) ](https://bintray.com/hmrc/releases/git-stamp/_latestVersion)
 
-A library that provides Git information
+A library that provides Git information for a MANIFEST.MF, with Java support via ``JGitStamp`` and Scala support via ``GitStamp``.
 
-## Installing
+The MANIFEST.MF entries are as follows
 
-TODO
+    Build-Date
+    Git-Branch
+    Git-Repo-Is-Clean
+    Git-Head-Rev
+    Git-Commit-Author
+    Git-Commit-Date
+    Git-Describe
 
 ## License
 
