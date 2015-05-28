@@ -18,16 +18,15 @@ import sbt.Keys._
 import sbt._
 import uk.gov.hmrc.DefaultBuildSettings._
 import uk.gov.hmrc.SbtAutoBuildPlugin
+import uk.gov.hmrc.versioning.SbtGitVersioning
 
 object HmrcBuild extends Build {
 
   val appName = "git-stamp"
-  val appVersion = "0.4.0-SNAPSHOT"
 
   lazy val project = Project(appName, file("."))
-    .enablePlugins(SbtAutoBuildPlugin)
+    .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning)
     .settings(
-      version := appVersion,
       targetJvm := "jvm-1.7",
       scalaVersion := "2.10.4",
       resolvers ++= Seq(Resolver.jcenterRepo),
@@ -38,42 +37,6 @@ object HmrcBuild extends Build {
         "org.pegdown" % "pegdown" % "1.4.2" % "test"
       ),
       sources in doc in Compile := List(),
-      sources in doc in Test := List(),
-      BuildDescriptionSettings()
+      sources in doc in Test := List()
     )
-}
-
-
-object BuildDescriptionSettings {
-
-  def apply() =
-    pomExtra := <url>https://www.gov.uk/government/organisations/hm-revenue-customs</url>
-      <licenses>
-        <license>
-          <name>Apache 2</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-      </licenses>
-      <scm>
-        <connection>scm:git@github.com:hmrc/releaser.git</connection>
-        <developerConnection>scm:git@github.com:hmrc/releaser.git</developerConnection>
-        <url>git@github.com:hmrc/releaser.git</url>
-      </scm>
-      <developers>
-        <developer>
-          <id>duncancrawford</id>
-          <name>Duncan Crawford</name>
-          <url>http://www.equalexperts.com</url>
-        </developer>
-        <developer>
-          <id>charleskubicek</id>
-          <name>Charles Kubicek</name>
-          <url>http://www.equalexperts.com</url>
-        </developer>
-        <developer>
-          <id>stevesmith</id>
-          <name>Steve Smith</name>
-          <url>http://www.equalexperts.com</url>
-        </developer>
-      </developers>
 }
